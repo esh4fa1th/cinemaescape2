@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script>
+        function selectDate() {
+            let selectedDate = document.getElementById('datePicker').value;
+            localStorage.setItem('selectedDate', selectedDate);
+            document.getElementById('continueButton').style.display = 'flex';
+        }
+    </script>
+
+<div id="vanilla" class="movie" onclick="selectMovie('vanilla', 'Vanilla Sky (2001)')" style="cursor: pointer;">
+
+
+</head>
+<body style="background-color: #2c2c2c; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    
+    <h1 style="margin-top: 50px; font-size: 36px;">CinemaEscape</h1>
+    
+    <div style="
+        background-color: #ffccdd;
+        width: 400px;
+        padding: 20px;
+        margin: 100px auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        position: relative;">
+        
+        <h2 style="color: black;">Pick a Date</h2>
+        
+        <input type="date" id="datePicker" onchange="selectDate()" style="
+            margin-top: 20px; 
+            padding: 10px; 
+            font-size: 16px; 
+            border-radius: 10px; 
+            border: none;">
+        
+        <a id="continueButton" href="invite.html" style="
+            display: none;
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffb6c1; 
+            color: white; 
+            width: 50px; 
+            height: 50px; 
+            border: none; 
+            border-radius: 50%; 
+            font-size: 24px; 
+            font-weight: bold; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;">
+            ➝
+        </a>
+    </div>
+</body>
+</html>

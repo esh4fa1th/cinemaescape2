@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Picker</title>
+    <script>
+        function selectMovie(movieId, movieName) {
+            document.querySelectorAll('.movie').forEach(movie => {
+                movie.style.border = 'none';
+            });
+            document.getElementById(movieId).style.border = '3px solid magenta';
+            
+            localStorage.setItem('selectedMovie', movieName);
+            document.getElementById('continueButton').style.display = 'flex';
+        }
+    </script>
+    
+</head>
+<body style="background-color: #2c2c2c; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    
+    <h1 style="margin-top: 50px; font-size: 36px;">CinemaEscape</h1>
+    
+    <div style="
+        background-color: #ffccdd;
+        width: 600px;
+        padding: 20px;
+        margin: 100px auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        position: relative;">
+        
+        <h2 style="color: black;">Pick a Movie</h2>
+        
+        <div style="display: flex; justify-content: space-around;">
+            <div id="vanilla" class="movie" onclick="selectMovie('vanilla')" style="cursor: pointer;">
+                <img src="../images/vs.jpg" alt="Vanilla Sky" width="120px" style="border-radius: 10px;">
+                <p style="color: black; font-weight: bold;">Vanilla Sky (2001)</p>
+                <p style="color: black;">Length: 136 min</p>
+                <p style="color: black; font-size: small;">A man lives a dreamlike life but faces a surreal reality after an accident.</p>
+            </div>
+            
+            <div id="submarine" class="movie" onclick="selectMovie('submarine')" style="cursor: pointer;">
+                <img src="../images/submarine.jpg" alt="Submarine" width="120px" style="border-radius: 10px;">
+                <p style="color: black; font-weight: bold;">Submarine (2010)</p>
+                <p style="color: black;">Length: 97 min</p>
+                <p style="color: black; font-size: small;">A teen navigates first love and family turmoil with a unique perspective.</p>
+            </div>
+            
+            <div id="manchester" class="movie" onclick="selectMovie('manchester')" style="cursor: pointer;">
+                <img src="../images/mbts.jpg" alt="Manchester by the Sea" width="120px" style="border-radius: 10px;">
+                <p style="color: black; font-weight: bold;">Manchester by the Sea (2016)</p>
+                <p style="color: black;">Length: 137 min</p>
+                <p style="color: black; font-size: small;">A troubled man becomes the guardian of his nephew after his brother's death.</p>
+            </div>
+        </div>
+        
+        <a id="continueButton" href="snackPlanner.html" style="
+            display: none;
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffb6c1; 
+            color: white; 
+            width: 50px; 
+            height: 50px; 
+            border: none; 
+            border-radius: 50%; 
+            font-size: 24px; 
+            font-weight: bold; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer;
+            text-decoration: none;">
+            ➝
+        </a>
+    </div>
+</body>
+</html>

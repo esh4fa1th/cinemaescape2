@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Friends</title>
+    <script>
+        function sharePlan() {
+            let movie = localStorage.getItem('selectedMovie') || 'No movie selected';
+            let date = localStorage.getItem('selectedDate') || 'No date selected';
+            let snack = localStorage.getItem('selectedSnack') || 'No snack selected';
+            
+            let emailBody = `Hey! Let's have a movie night!%0A%0A` +
+                            `Movie: ${movie}%0A` +
+                            `Date: ${date}%0A` +
+                            `Snack: ${snack}%0A%0A` +
+                            `Join me for a fun time!`;
+            
+            window.location.href = `mailto:?subject=Movie Night Plan&body=${emailBody}`;
+        }
+    </script>
+</head>
+<body style="background-color: #2c2c2c; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    
+    <h1 style="margin-top: 50px; font-size: 36px;">CinemaEscape</h1>
+    
+    <div style="
+        background-color: #ffccdd;
+        width: 400px;
+        padding: 20px;
+        margin: 100px auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        position: relative;">
+        
+        <h2 style="color: black;">Your Movie Night</h2>
+        
+        <p style="color: black; font-size: 18px;"><strong>Movie:</strong> <span id="movieDisplay">Loading...</span></p>
+        <p style="color: black; font-size: 18px;"><strong>Date:</strong> <span id="dateDisplay">Loading...</span></p>
+        <p style="color: black; font-size: 18px;"><strong>Snack:</strong> <span id="snackDisplay">Loading...</span></p>
+        
+        <button onclick="sharePlan()" style="
+            margin-top: 20px; 
+            background-color: magenta; 
+            color: white; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 10px; 
+            border: none; 
+            cursor: pointer;">
+            Share
+        </button>
+    </div>
+    
+    <script>
+        document.getElementById('movieDisplay').innerText = localStorage.getItem('selectedMovie') || 'No movie selected';
+        document.getElementById('dateDisplay').innerText = localStorage.getItem('selectedDate') || 'No date selected';
+        document.getElementById('snackDisplay').innerText = localStorage.getItem('selectedSnack') || 'No snack selected';
+    </script>
+</body>
+</html>

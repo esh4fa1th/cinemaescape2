@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack Planner</title>
+    <script>
+        function selectSnack(snackId, snackName) {
+            document.querySelectorAll('.snack').forEach(snack => {
+                snack.style.border = 'none';
+            });
+            document.getElementById(snackId).style.border = '3px solid magenta';
+            
+            localStorage.setItem('selectedSnack', snackName);
+            document.getElementById('continueButton').style.display = 'flex';
+        }
+    </script>
+
+
+
+</head>
+<body style="background-color: #2c2c2c; color: white; text-align: center; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    
+    <h1 style="margin-top: 50px; font-size: 36px;">CinemaEscape</h1>
+    
+    <div style="
+        background-color: #ffccdd;
+        width: 600px;
+        padding: 20px;
+        margin: 100px auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        position: relative;">
+        
+        <h2 style="color: black;">Pick Your Snacks</h2>
+        
+        <h3 style="color: black; margin-top: 20px;">Sweet</h3>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+            <div id="chocolate" class="snack" onclick="selectSnack('chocolate')" style="cursor: pointer;"><img src="../images/chocolate.jpg" alt="Chocolate" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Chocolate</p></div>
+            <div id="cupcake" class="snack" onclick="selectSnack('cupcake')" style="cursor: pointer;"><img src="../images/cupcake.jpg" alt="Cupcake" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Cupcake</p></div>
+            <div id="donuts" class="snack" onclick="selectSnack('donuts')" style="cursor: pointer;"><img src="../images/donuts.jpg" alt="Donuts" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Donuts</p></div>
+            <div id="candy" class="snack" onclick="selectSnack('candy')" style="cursor: pointer;"><img src="../images/candy.jpg" alt="Candy" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Candy</p></div>
+            <div id="macarons" class="snack" onclick="selectSnack('macarons')" style="cursor: pointer;"><img src="../images/macarons.jpg" alt="Macarons" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Macarons</p></div>
+            <div id="icecream" class="snack" onclick="selectSnack('icecream')" style="cursor: pointer;"><img src="../images/icecream.jpg" alt="Ice Cream" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Ice Cream</p></div>
+        </div>
+        
+        <h3 style="color: black; margin-top: 20px;">Salty</h3>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+            <div id="popcorn" class="snack" onclick="selectSnack('popcorn')" style="cursor: pointer;"><img src="../images/popcorn.jpg" alt="Popcorn" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Popcorn</p></div>
+            <div id="pretzels" class="snack" onclick="selectSnack('pretzels')" style="cursor: pointer;"><img src="../images/pretzels.jpg" alt="Pretzels" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Pretzels</p></div>
+            <div id="chips" class="snack" onclick="selectSnack('chips')" style="cursor: pointer;"><img src="../images/chips.jpg" alt="Chips" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Chips</p></div>
+            <div id="fries" class="snack" onclick="selectSnack('fries')" style="cursor: pointer;"><img src="../images/fries.jpg" alt="Fries" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Fries</p></div>
+            <div id="nachos" class="snack" onclick="selectSnack('nachos')" style="cursor: pointer;"><img src="../images/nachos.jpg" alt="Nachos" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Nachos</p></div>
+            <div id="cheeseballs" class="snack" onclick="selectSnack('cheeseballs')" style="cursor: pointer;"><img src="../images/cheeseballs.jpg" alt="Cheese Balls" style="width: 80px; height: 80px; object-fit: cover;"><p style="color: black;">Cheese Balls</p></div>
+        </div>
+        
+        <a id="continueButton" href="dashboard.html" style="
+            display: none;
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffb6c1; 
+            color: white; 
+            width: 50px; 
+            height: 50px; 
+            border: none; 
+            border-radius: 50%; 
+            font-size: 24px; 
+            font-weight: bold; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer;
+            text-decoration: none;">
+            ➝
+        </a>
+    </div>
+</body>
+</html>
